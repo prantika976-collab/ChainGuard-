@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ChainGuard — AI Supply Chain Disruption Detector</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="nebula nebula-a"></div>
+    <div class="nebula nebula-b"></div>
+    <div class="stars"></div>
+
+    <header class="hero glass">
+      <div class="hero-copy">
+        <p class="badge">🚀 Hackathon Ready</p>
+        <h1>ChainGuard</h1>
+        <p class="pitch">
+          “ChainGuard continuously monitors live shipment data, detects disruptions
+          before they cascade, and instantly recommends optimized reroutes —
+          saving time, cost, and chaos.”
+        </p>
+        <div class="hero-stats">
+          <div><span id="onTimeRate">0%</span><label>On-Time Rate</label></div>
+          <div><span id="activeAlerts">0</span><label>Active Alerts</label></div>
+          <div><span id="atRiskCount">0</span><label>At-Risk Shipments</label></div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <img
+          src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=1000&q=80"
+          alt="Galaxy visual"
+        />
+      </div>
+    </header>
+
+    <main class="dashboard">
+      <section class="panel glass" id="trackerPanel">
+        <div class="panel-title-row">
+          <h2>1) Real-Time Shipment Tracker</h2>
+          <button id="toggleViewBtn" class="soft-btn">Map/List View</button>
+        </div>
+        <div id="shipmentView" class="shipment-list"></div>
+      </section>
+
+      <section class="panel glass" id="alertsPanel">
+        <h2>2) Disruption Alerts Engine</h2>
+        <div id="alertFeed" class="alert-feed"></div>
+      </section>
+
+      <section class="panel glass" id="reroutePanel">
+        <h2>3) AI-Powered Reroute Recommendation</h2>
+        <p class="small-note">
+          Select a disrupted shipment to generate ranked alternatives. Claude API
+          is optional and can be enabled with your API key.
+        </p>
+        <div class="api-row">
+          <input id="apiKey" type="password" placeholder="Anthropic API Key (optional)" />
+          <button id="generateAiBtn" class="soft-btn">Generate AI Reroutes</button>
+        </div>
+        <div id="rerouteCards" class="reroute-cards"></div>
+      </section>
+
+      <section class="panel glass" id="riskMapPanel">
+        <h2>4) Supply Chain Risk Map</h2>
+        <div class="risk-map-wrap">
+          <svg id="riskMap" viewBox="0 0 900 380" preserveAspectRatio="xMidYMid meet"></svg>
+        </div>
+      </section>
+
+      <section class="panel glass" id="predictivePanel">
+        <h2>5) Predictive Analytics</h2>
+        <div class="charts-grid">
+          <div>
+            <h3>On-time Delivery by Carrier</h3>
+            <canvas id="carrierChart" width="380" height="220"></canvas>
+          </div>
+          <div>
+            <h3>Average Delay by Route (hours)</h3>
+            <canvas id="delayChart" width="380" height="220"></canvas>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel glass" id="historyPanel">
+        <h2>6) Incident History & Playbook</h2>
+        <input id="historySearch" type="text" placeholder="Search disruptions, resolution, route..." />
+        <div id="incidentHistory" class="incident-history"></div>
+      </section>
+    </main>
+
+    <aside class="floating-widgets">
+      <div class="widget glass">
+        <h3>What-if Simulator</h3>
+        <select id="simScenario">
+          <option value="storm">Typhoon closes Pacific port</option>
+          <option value="strike">Customs strike in EU lane</option>
+          <option value="breakdown">Carrier breakdown in domestic hub</option>
+        </select>
+        <button id="runSim" class="soft-btn">Run Scenario</button>
+        <p id="simResult" class="small-note"></p>
+      </div>
+
+      <div class="widget glass">
+        <h3>Supplier Scorecard</h3>
+        <div id="supplierScores"></div>
+      </div>
+    </aside>
+
+    <div id="bannerHost" class="banner-host"></div>
+
+    <template id="shipmentTemplate">
+      <article class="shipment-card">
+        <header>
+          <h3></h3>
+          <span class="status-dot"></span>
+        </header>
+        <p class="meta"></p>
+        <p class="eta"></p>
+        <button class="soft-btn details-btn">Open Details</button>
+      </article>
+    </template>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
