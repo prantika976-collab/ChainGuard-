@@ -1,0 +1,42 @@
+{
+  "shipments": [
+    {"id":"CG-1001","route":"Shenzhen → LA → Dallas","carrier":"NovaFreight","status":"on-time","eta":"2026-04-16T15:30:00Z","location":"Los Angeles Port","risk":12,"cost":14800},
+    {"id":"CG-1002","route":"Ho Chi Minh → Vancouver → Chicago","carrier":"BlueArc","status":"at-risk","eta":"2026-04-17T10:00:00Z","location":"Pacific lane","risk":52,"cost":12400},
+    {"id":"CG-1003","route":"Hamburg → Rotterdam → Newark","carrier":"TerraLine","status":"disrupted","eta":"2026-04-19T11:20:00Z","location":"Rotterdam customs","risk":87,"cost":10950},
+    {"id":"CG-1004","route":"Pune → Dubai → Houston","carrier":"NovaFreight","status":"on-time","eta":"2026-04-18T06:20:00Z","location":"Arabian Sea","risk":18,"cost":13200},
+    {"id":"CG-1005","route":"Busan → Seattle → Denver","carrier":"PolarTransit","status":"at-risk","eta":"2026-04-17T22:45:00Z","location":"Seattle rail yard","risk":47,"cost":9100},
+    {"id":"CG-1006","route":"Santos → Miami → Atlanta","carrier":"BlueArc","status":"on-time","eta":"2026-04-16T20:00:00Z","location":"Miami DC","risk":23,"cost":8400},
+    {"id":"CG-1007","route":"Qingdao → Long Beach → Phoenix","carrier":"NovaFreight","status":"disrupted","eta":"2026-04-18T18:00:00Z","location":"Long Beach terminal 4","risk":80,"cost":10200},
+    {"id":"CG-1008","route":"Kaohsiung → Oakland → Salt Lake","carrier":"TerraLine","status":"on-time","eta":"2026-04-17T08:30:00Z","location":"Oakland port","risk":16,"cost":9500},
+    {"id":"CG-1009","route":"Le Havre → NYC → Columbus","carrier":"BlueArc","status":"at-risk","eta":"2026-04-20T12:10:00Z","location":"Mid-Atlantic lane","risk":58,"cost":8700},
+    {"id":"CG-1010","route":"Tokyo → Anchorage → Minneapolis","carrier":"PolarTransit","status":"on-time","eta":"2026-04-19T13:10:00Z","location":"Anchorage hub","risk":20,"cost":9800},
+    {"id":"CG-1011","route":"Bangkok → LA → Kansas City","carrier":"NovaFreight","status":"at-risk","eta":"2026-04-19T03:40:00Z","location":"Inland truck leg","risk":49,"cost":10600},
+    {"id":"CG-1012","route":"Felixstowe → Halifax → Detroit","carrier":"TerraLine","status":"on-time","eta":"2026-04-18T09:00:00Z","location":"Halifax transfer","risk":19,"cost":10100},
+    {"id":"CG-1013","route":"Ningbo → Tacoma → Boise","carrier":"BlueArc","status":"disrupted","eta":"2026-04-18T01:20:00Z","location":"Tacoma berth 2","risk":92,"cost":9900},
+    {"id":"CG-1014","route":"Mumbai → Jebel Ali → Savannah","carrier":"NovaFreight","status":"on-time","eta":"2026-04-21T15:15:00Z","location":"Atlantic crossing","risk":26,"cost":11500},
+    {"id":"CG-1015","route":"Manila → Vancouver → Toronto","carrier":"TerraLine","status":"at-risk","eta":"2026-04-20T04:40:00Z","location":"Vancouver customs","risk":60,"cost":9700},
+    {"id":"CG-1016","route":"Jakarta → Singapore → Newark","carrier":"BlueArc","status":"on-time","eta":"2026-04-19T22:05:00Z","location":"Singapore relay","risk":21,"cost":10800},
+    {"id":"CG-1017","route":"Xiamen → LA → El Paso","carrier":"PolarTransit","status":"on-time","eta":"2026-04-18T16:15:00Z","location":"LA yard","risk":22,"cost":9300},
+    {"id":"CG-1018","route":"Antwerp → Norfolk → Raleigh","carrier":"NovaFreight","status":"at-risk","eta":"2026-04-20T09:50:00Z","location":"Norfolk docking queue","risk":55,"cost":8900},
+    {"id":"CG-1019","route":"Dalian → Seattle → Omaha","carrier":"TerraLine","status":"on-time","eta":"2026-04-21T02:15:00Z","location":"Seattle customs","risk":27,"cost":9400},
+    {"id":"CG-1020","route":"Colombo → Houston → Memphis","carrier":"BlueArc","status":"on-time","eta":"2026-04-21T13:35:00Z","location":"Houston transfer","risk":24,"cost":12000}
+  ],
+  "alerts": [
+    {"severity":"high","title":"Rotterdam customs strike","impact":"Impacts CG-1003, CG-1015. Delay risk +26h","time":"6 min ago"},
+    {"severity":"high","title":"Long Beach terminal congestion","impact":"Impacts CG-1007, CG-1017. Capacity at 132%","time":"11 min ago"},
+    {"severity":"medium","title":"Pacific weather disturbance","impact":"Impacts CG-1002, CG-1009","time":"19 min ago"},
+    {"severity":"low","title":"Carrier maintenance notice","impact":"Potential slowdown on BlueArc lane","time":"37 min ago"}
+  ],
+  "incidents": [
+    {"date":"2026-04-11","event":"Port congestion - Long Beach","resolution":"Shifted 3 shipments to Oakland + rail","outcome":"Recovered 17h"},
+    {"date":"2026-04-08","event":"Customs delay - Hamburg","resolution":"Pre-cleared docs + alternate broker","outcome":"Recovered 9h"},
+    {"date":"2026-04-05","event":"Truck breakdown - Texas","resolution":"Cross-docked to backup carrier","outcome":"Recovered 6h"},
+    {"date":"2026-04-02","event":"Storm reroute - Pacific lane","resolution":"Rerouted via Anchorage","outcome":"Recovered 13h"}
+  ],
+  "suppliers": [
+    {"name":"Zenith Components","reliability":94},
+    {"name":"Ionix Fabrication","reliability":86},
+    {"name":"NexPort Plastics","reliability":79},
+    {"name":"Helio Circuits","reliability":91}
+  ]
+}
